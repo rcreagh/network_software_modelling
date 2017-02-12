@@ -23,7 +23,7 @@ def kruskal(graph):
   current_tree_size = 0
 
   # Make a list from the edges of graph.
-  edges = list(graph.edges(data=True))
+  edges = sorted(list(graph.edges(data=True)))
   for i in range(len(edges)):
     edge = min(edges, key=lambda e: e[2]["weight"])
     edges.remove(edge)
