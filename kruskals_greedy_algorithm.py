@@ -19,6 +19,9 @@ def kruskal(graph):
   for i in graph.nodes():
     minimum_spanning_tree.add_node(i)
 
+  # Track the size of the tree
+  current_tree_size = 0
+
   # Make a list from the edges of graph.
   edges = list(graph.edges(data=True))
   for i in range(len(edges)):
@@ -30,4 +33,9 @@ def kruskal(graph):
       pass
     else:
       minimum_spanning_tree.add_edge(edge[0], edge[1], weight=edge[2]["weight"])
+      # Increase current tree size by 1
+      current_tree_size += 1
+    # Stop if tree size is equal to number of nodes - 1
+    if current_tree_size >= graph.order():
+      break
   return minimum_spanning_tree
