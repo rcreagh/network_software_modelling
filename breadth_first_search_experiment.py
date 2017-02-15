@@ -7,5 +7,5 @@ import breadth_first_search
 
 graph = networkx.generators.random_graphs.gnm_random_graph(25, 20)
 
-nodes_in_sub_graph = breadth_first_search.breadth_first_search(graph, 5)
-print(nodes_in_sub_graph)
+nodes_in_sub_graph = list(breadth_first_search.breadth_first_search(graph, 5))
+print nodes_in_sub_graph
