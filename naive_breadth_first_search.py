@@ -20,7 +20,7 @@ class Vertex(object):
     return '\n' + str(
       self.name) + ', ' + str(self.parent) + ', ' + str(self.depth)
 
-def breadth_first_search(graph, root_vertex):
+def naive_breadth_first_search(graph, root_vertex):
   """ Traverse a graph breadth first. NOTE: This is WIP.
 
   Args:
