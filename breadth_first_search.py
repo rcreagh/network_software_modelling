@@ -15,6 +15,11 @@ class Vertex(object):
     self.parent = parent
     self.depth = depth
 
+  def __repr__(self):
+    """Change print format to show name, parent and depth of vertices."""
+    return '\n' + str(
+      self.name) + ', ' + str(self.parent) + ', ' + str(self.depth)
+
 def breadth_first_search(graph, root_vertex):
   """ Traverse a graph breadth first. NOTE: This is WIP.
 
@@ -27,19 +32,16 @@ def breadth_first_search(graph, root_vertex):
   
   sub_graph = []
   queue = []
-  # Set initial distance from root vertex.
-  current_distance_from_root_vertex = 0
   # Add root node to sub_graph.
   sub_graph.append(Vertex(root_vertex, None, 0))
-  queue.append(root_vertex)
+  queue.append(Vertex(root_vertex, None, 0))
   while len(queue) > 0:
     current_vertex = queue[0]
     del queue[0]
-    current_distance_from_root_vertex += 1
-    for s in graph.neighbors(current_vertex):
+    for s in graph.neighbors(current_vertex.name):
       if s not in [data.name for data in sub_graph]:
         new_vertex = Vertex(
-          s, current_vertex, current_distance_from_root_vertex)
+          s, current_vertex.name, current_vertex.depth + 1)
         sub_graph.append(new_vertex)
-        queue.append(s)
+        queue.append(new_vertex)
   return sub_graph
