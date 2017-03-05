@@ -1,8 +1,7 @@
 #! usr/bin/python
 """ This script implements a min_2_heap data structure. This is for educational
-purposes only. In practice, an ready built module would be used.
+purposes only. In practice, an ready built module would be used."""
 
-#TODO Add doc strings and tests.
 
 def parent(i):
   """ Get the parent of a given node.
