@@ -14,3 +14,11 @@ def prim(graph):
 
   # Initialize count of the number of nodes in the tree.
   current_tree_size = 0
+
+  seen_nodes = set()
+  unseen_nodes = set()
+
+  for i in range(len(edges)):
+    unseen_nodes.add(graph[i])
+
+TODO: COMPLETE
