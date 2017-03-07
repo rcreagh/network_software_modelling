@@ -4,6 +4,7 @@ purposes. Prim's algorithm is a greedy approach to finding a (there may be more
 than one) minimal spanning tree of a graph, using Python's networkx library."""
 
 import networkx
+import random
 
 def prim(graph):
   """ Implementation of Prim's Greedy Algorithm.
@@ -16,9 +17,11 @@ def prim(graph):
   current_tree_size = 0
 
   seen_nodes = set()
-  unseen_nodes = set()
+  open_nodes = set()
+  source_node = random.choice(graph.nodes())
+  
+  open_nodes.add(source_node)
 
-  for i in range(len(edges)):
-    unseen_nodes.add(graph[i])
+  while open_nodes:
 
 TODO: COMPLETE
