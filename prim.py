@@ -8,6 +8,8 @@ import networkx
 import priority_queue
 import random
 
+# NOTE: WIP
+
 def prim(graph, root_node):
   """ Implementation of Prim's Greedy Algorithm.
 
@@ -19,11 +21,12 @@ def prim(graph, root_node):
   queue = [] # TODO - alter priority queue to be suitable for this problem.
   parents = {root_node: None}
 
-  queue.append((root_node, 0))
-
-  n, p = min(queue)
+  queue.append((0, root_node))
 
   while queue:
-  next_node, priority = min(queue)
+    priority, next_node = min(queue)
+    for neighbor in graph.neighbors(next_node):
+      if neighbor in queue:
+        if graph[next_node][neighbor]['weight'] < queue[]
 
 # TODO: COMPLETE
